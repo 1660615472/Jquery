@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>初步认识Jquery</title>
+    <style>
+        *{
+            margin: 0;
+            padding:0;
+        }
+
+        div{
+            width: 100px;
+            height: 100px;
+            border: 1px solid #000;
+        }
+    </style>
+    <script src="https://code.jquery.com/jquery-1.12.4.js"></script><!--引入jquery--><!--不带MIN是未压缩版本，方便阅读源码-->
+
+    <!--这里也能写script标签的两种方法-->
+    <script>
+        //1.原生JS固定写法
+        window.onload = function (ev) {
+            
+        }
+
+        //2.jquery的固定写法
+        $(document).ready(function () {
+
+        })
+
+
+    </script>
+</head>
+<body>
+    <div></div>
+
+    <div class="box1"></div>
+
+    <div id="box2"></div>
+
+
+    <script>
+       /* //1.利用原生的javascript查找DOM元素
+        let div = document.getElementsByTagName("div")[0]; //找到所有的div，取第一个
+        let div2 = document.querySelector('.box1');
+        let div3 = document.querySelector("#box2");
+        console.log(div,div2,div3);//该方法用于控制太输出信息，常用于开发中测试
+*/
+       //通过jquery找jquery元素
+
+           let $div1 = $("div");
+           let $div2 = $(".box1");
+           let $div3 = $("#box2");
+            console.log($div1,$div2,$div3);
+
+            $(function(){
+            $div1.css({     //jquery用法更简单，更贴合css操作
+                background:"red"
+            });
+
+            $div2.css({
+                background: "blue"
+            });
+
+            $div3.css({
+                background:"yellow"
+            });
+           });
+
+/*
+        //利用原生javascript修改背景颜色
+       let div = document.getElementsByTagName("div")[0]; //找到所有的div，取第一个
+       div.style.backgroundColor="blue";
+       let div2 = document.querySelector('.box1');
+       div2.style.background="yellow";
+       let div3 = document.querySelector("#box2");
+       div3.style.background="red";*/
+    </script>
+</body>
+</html>

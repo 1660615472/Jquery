@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>jquery和原生js入口函数的区别</title>
+    <script src="https://code.jquery.com/jquery-3.4.1.js"></script>
+
+    <script>
+     /*   /!*原生js*!/
+        window.onload = function (ev) {
+            //通过原生js拿到DOM元素
+            let img = document.getElementsByTagName("img")[1];
+            console.log(img);
+           let width1 = window.getComputedStyle(img).width;
+            console.log(width1);//输出图片的宽带
+        }
+
+        /!*原生JS和jQuery入口函数的加载模式不同
+        * 原生JS会等到DOM元素加载完毕，并且图片也加载完毕c才会执行
+        * jQuery会等到DOM元素加载完毕，但不会等到图片加载完毕就会执行*!/
+
+        /!*jquery*!/
+        $(document).ready(function () {
+            //通过jquery的入口函数拿到DOM元素
+          let $img2 = $("#jd")[0];
+            console.log($img2);
+
+            //2.通过jQuery入口函数不可以拿到DOM元素的宽高
+            let $width = $img2.width();
+            console.log($width);
+        });*/
+
+/*
+        //在页面所有资源加载完毕后执行，如果有多个定义则执行最后一个
+        window.onload = function () {
+            alert("helloworld 1");
+
+        }
+     window.onload = function () {
+         alert("helloworld 2");
+
+     }
+
+        //在DOM加载完成时运行代码，如果有多个定义则依次执行
+        $(function () {
+            alert("goodmorning")
+        });
+
+        $(function(){
+            alert("goodmorning2")
+     });
+
+*/
+
+
+
+
+
+    </script>
+
+
+</head>
+<body>
+    <img src="https://img10.360buyimg.com/img/jfs/t1/38513/39/7769/247498/5cf08821E7ec90ef8/4e98711c9496be46.gif"
+    alt="京东吉祥物">
+
+    <img src="https://img12.360buyimg.com/mobilecms/s140x140_jfs/t1/26809/3/12717/61505/5c9a3b9bE6bd98afc/a91cbfd8e1907aea.jpg!q90.webp" alt="xx" id="jd">
+
+
+<button class="continue"></button>
+<button class="prev"></button>
+    <script>
+        //DOM操作属性
+        let continueButton = document.querySelector("button.continue");
+        continueButton.innerHTML = "Next Step...";
+
+        //$表示jQuery对象
+        let $prevButton = $("button.prev");
+        $prevButton.html("prev step");
+
+        //添加事件
+        continueButton.addEventListener("click",function () {
+            alert("continue step");
+        });
+
+        $prevButton.on("click",function () {
+            alert("prevButton");
+        });
+
+
+        //jQuery ajax 获取后台发出的信息 再页面显示
+        let requestURL = "https://java201903.github.io/web-demo/data/empList.json";
+        $.ajax({
+            url:requestURL,
+            method:"GET",
+            dataType:"json",
+            success:function (response) {
+                alert(response[0]["empName"]);
+            }
+
+        });
+
+    </script>
+</body>
+</html>

@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>jQuery冲突问题</title>
+    <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+    <script>
+        //如果其他框架也使用$符号则会和jQuery冲突，通过释放$改用jQuery来解决
+        //释放$符号使用权
+        //！！注意点：释放操作必须在编写其他jQuery代码前，释放后不能再使用$改为jQuery
+        jQuery.noConflict();//无冲突
+        /*$*/ jQuery(function () {
+
+        });
+
+    </script>
+</head>
+<body>
+
+</body>
+</html>

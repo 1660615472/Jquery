@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>属性和属性节点</title>
+    <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+    <script>
+        /*1.什么是属性？
+        对象身上保存的变量就是属性
+        2.如何操作属性？
+        对象.属性名称=值
+        对象.属性名称 --获取值
+        对象["属性名称"]=值
+        对象["属性名称"] --获取值
+
+        * */
+
+
+        function person() {
+            
+        }
+
+         let p = new person();
+            p.name="Tom";
+        console.log(p.name);
+            p["name"]="jack";
+        console.log(p["name"]);
+
+
+        /*什么是属性节点：在HTML标签中添加各种属性就是属性节点  <p class="ppp"> </p>
+        * 再浏览器中展开span这个DOM元素后看到的都是属性
+        * 再attributes属性中保持的所有内容都是属性节点
+        *
+        * ！！！只有DOM元素才有属性节点
+        *
+        * */
+
+        //修改<span>标签中的属性
+        $(function () {
+         let $span = $("span");
+         $span.setAttribute("name","it7777");//设置属性
+            console.log($span.getAttributeNames());
+        })
+
+    </script>
+</head>
+<body>
+    <span name="it6666"> name </span>
+</body>
+</html>

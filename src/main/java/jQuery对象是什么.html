@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>jQuery对象是什么</title>
+    <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+
+    <script>
+
+        /*1.什么是jQuery对象
+        * jQuery对象是一个伪数组
+        *
+        * 2.什么是伪数组
+        * 有0-length-1的属性，并且有length属性
+        *  1:真数组的长度是可变的，伪数组的长度不可变
+        * 2：真数组可以使用数组中的方法（.forEach）,伪数组不可以
+*        3：真数组可以使用原型辨别，伪数组没有__proto__和prototype
+        * */
+        $(function () {//入口函数
+            let $div = $("div");
+            console.log($div);
+        })
+
+    </script>
+</head>
+<body>
+    <div>div1</div>
+    <div>div3</div>
+</body>
+</html>

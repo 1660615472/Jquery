@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>jQuery操作列表</title>
+    <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+    <style>
+        table{
+            margin: 50px auto 0px auto;
+            border-collapse:collapse;/*设置表格合并边框*/
+            text-align: center;
+            vertical-align:center;/*垂直对齐*/
+        }
+
+        table,th,td{/*设置单元格边*/
+            border: 1px solid black;
+        }
+
+        th,td{
+            width: 100px;
+            height:30px;
+        }
+
+        /* .row{
+
+             display: inline-block;!*设置rowdiv为内行元素*!
+         }*/
+
+        .row{
+            margin: 0 auto;
+            width: 800px;
+
+        }
+
+        .row+.row{
+            margin-top:30px ;
+        }
+
+        .row:nth-of-type(1){/*设置第一个rowdiv距离上边距100px*/
+            margin-top: 100px;
+        }
+        .row:nth-of-type(3){
+            margin-bottom: 100px;
+        }
+
+        label{
+            display: inline-block;
+            width: 50px;
+            font-weight:bold;/*设置字体黑体*/
+            margin-right: 10px;
+        }
+
+
+        .point{
+            display: inline-block; ;
+        }
+
+        button{
+            width: 150px;
+            height: 40px;
+            text-align: center;
+            background-color: blue;
+            border-radius:10px;
+            border:0;/*边框粗细为0*/
+            margin-left: 60px;
+        }
+
+        label+button{
+            margin-top: 20px;
+        }
+
+        input{
+            width: 250px;
+            height: 25px;
+        }
+
+
+
+
+    </style>
+</head>
+<br>
+<div id="top">
+    <div class="row"><!--一行放2个文本框-->
+        <div class="point">
+            <label for="id">ID</label> <input id="id" type="text" name="id"><!--id标题和输入框-->
+
+        </div>
+        <div class="point">
+            <label for="name">Name</label> <input id="name" type="text" name="name">
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="point">
+            <label for="salary">Salary</label> <input id="salary" type="text" name="salary">
+        </div>
+        <div class="point">
+            <label for="job">Job</label> <input id="job" type="text" name="job">
+        </div>
+    </div>
+    <div class="row"><!--按钮-->
+        <button>add</button>
+    </div>
+
+
+</div>
+
+<hr><!--被水平线分割的标题和段落-->
+
+<div class="bottom"><!--底部列表-->
+    <table>
+
+        <tr><!--代表一行-->
+            <th>ID</th><!--代表标题 字粗-->
+            <th>Name</th>
+            <th>Salary</th>
+            <th>Job</th>
+            <th>delete</th>
+        </tr>
+
+    </table>
+</div>
+
+</head>
+<body>
+    <script>
+        //jQuery入口程序
+        $(function () {
+            $("button").click(function () {
+               //创建一个tr元素
+              let $tr = $("<tr></tr>");
+
+              //添加子节点
+              $("tbody").append($tr);
+
+              //创建一个图片元素
+              let $img =  $("<img src='../../../picture/delete.png'>");
+
+              //给图片添加单击事件
+                $img.click(function () {
+                   $tr.remove();
+                });
+
+                //把图片主动加入td列表
+                $img.appendTo("<td></td>");
+
+            //创建各列并传值
+            $tr.append("<td>"+$("#id").val()+"</td>")
+                .append("<td>"+$("#name").val()+"</td>")
+                .append("<td>"+$("#salary").val()+"</td>")
+                .append("<td>"+$("#job").val()+"</td>")
+                .append($img);
+
+
+            //结束时候各调单值清空
+                $("#id").val("");
+                $("#name").val("");
+                $("#salary").val("");
+                $("#job").val("");
+
+                $("#id").focus;
+
+            });
+        });
+
+    </script>
+
+</body>
+</html>

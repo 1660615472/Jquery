@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>jQuery的attr方法</title>
+    <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+    <script>
+       jQuery(function () {
+          /* /!*1.attr（）
+           * 作用：获取或者设置属性节点值
+           * 可以传递一个参数（代表获取属性节点值），或者2个参数（设置属性节点值）
+           * 如果设置的属性节点不存在则系统会自动新增
+           * *!/*/
+
+            console.log($("span").attr("class"));//获取属性节点
+           $("span").attr("class","box1");//修改span标签的属性节点值（class）
+           $("span").attr("abc","box2");//没有属性节点则系统自动新建
+
+           //2.removeAttr 删除属性节点
+           $("span").removeAttr("class name");//删除span标签的class节点,如果想删除多个属性节点则空一格
+
+
+        });
+
+
+    </script>
+</head>
+<body>
+<span class="span1" name="it6666"></span>
+<span class="span2" name="it7777"></span>
+</body>
+</html>

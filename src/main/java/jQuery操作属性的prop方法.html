@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>jQuery操作属性的prop方法</title>
+    <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+    <SCRIPT>
+        $(function(){
+           /*
+           * 1.prop操作属性方法
+           *
+           * */
+           let $prop = $("span").eq(0).prop("it666","it9999");
+            console.log($prop);
+
+
+        });
+    </SCRIPT>
+</head>
+<body>
+    <span class="span1" name="it666"></span>
+    <span class="span2" name="it777"></span>
+
+</body>
+</html>
