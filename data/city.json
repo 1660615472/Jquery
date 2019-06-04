@@ -1,48 +1,23 @@
+
 [
   {
-    "name": "江苏",
-    "id": "jiangsu",
-    "cities": [
-      {
-        "name": "南京",
-        "id": "nanjing"
-      },
-      {
-        "name": "苏州",
-        "id": "suzhou"
-      }
-    ]
+    "name": "南京市",
+    "id": "nanjing",
+    "provinceId": "jiangsu"
   },
   {
-    "name": "浙江",
-    "id": "zhejiang",
-    "cities": [
-      {
-        "name": "杭州",
-        "id": "hangzhou"
-      },
-      {
-        "name": "宁波",
-        "id": "ningbo"
-      }
-    ]
+    "name": "苏州",
+    "id": "suzhou",
+    "provinceId": "jiangsu"
   },
   {
-    "name": "重庆",
-    "id": "chongqing",
-    "cities": [
-      {
-        "name": "渝中区",
-        "id": "yuzhongqu"
-      },
-      {
-        "name": "大渡口区",
-        "id": "dadukouqu"
-      },
-      {
-        "name": "江北区",
-        "id": "jiangbeiqu"
-      }
-    ]
+    "name": "杭州",
+    "id": "hangzhou",
+    "provinceId": "zhejiang"
+  },
+  {
+    "name": "宁波",
+    "id": "ningbo",
+    "provinceId": "zhejiang"
   }
 ]
